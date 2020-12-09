@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+
+  <head>
+
+    <title>Spotify Flask</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <!-- Google fonts and icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  </head>
+
+  <body>
+
+    <div id="header">
+
+    </div>
+
+    <div id="content">
+      {% block content %}{% endblock %}
+      <div class="fix-footer"></div>
+    </div>
+
+  </body>
+  
+  <footer id="footer">
+    <p>
+      gALz
+    </p>
+  </footer>
+
+</html>

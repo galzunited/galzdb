@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container">
+
+  <div class="row artist-title">
+
+    <div class="col-sm-6">
+      <h1 class="page-title">{{artist.name}}</h1>
+      <hr class="rule"/>
+      <a href="{{artist.external_urls.spotify}}"> {{artist.name}} on Spotify </a>
+
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-sm-4">
+
+      <section class="sec">
+        <img src="{{artist.images[0].url}}" alt="{{image_url}}" class="img-fluid">
+      </section>
+
+    </div>
+
+    <div class="col-sm-8">
+      {% if tracks %}
+          <section class="tracks">
+            <h3>Top Tracks of {{artist.name}} in Israel</h3>
+            <hr class="rule"/>
+            {% include 'top_tracks.html' %}
+          </section>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}
