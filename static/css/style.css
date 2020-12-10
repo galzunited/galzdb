@@ -46,8 +46,8 @@
   color: white
 }
 
-.artist-search {
-  border-top: 5px solid white;
+.btns {
+    display: flex;
 }
 
 #footer {

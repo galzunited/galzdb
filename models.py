@@ -14,7 +14,7 @@ database = PostgresqlDatabase(
     host=os.environ['POST_HOST'],
     port=os.environ['POST_PORT'],
 )
-#
+
 # database = PostgresqlDatabase(
 #     prv.DATABASE,
 #     user=prv.USER,
@@ -53,6 +53,11 @@ class Cars(BaseModel):
 
     class Meta:
         table_name = 'cars'
+
+# with database.connection_context():
+    # res = CarColors.insert({
+    #     'color_name': 'yellow'}).execute()
+    # Cars.insert({"car_plate": "10-191-312", "user_id": 1, "color_id": "1"}).execute()
 
 # database.drop_tables([CarColors, Cars, Users], cascade=True)
 

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Add Car</h1>
+    <div class="car">
+        <form action="{{ url_for('add_car') }}" method="POST">
+            <label>Car Plate:</label>
+            <input type=text" name="input_car_plate" value="{{car_plate}}">
+            Choose a User<SELECT name="input_user_id">
+            {% for user in users %}
+                <OPTION value={{user.user_id}}>{{user.first_name}} {{user.last_name}}</option>
+            {% endfor %}
+            </SELECT>
+            Choose a Color<SELECT name="input_color_id">
+            {% for color in carColors %}
+                <OPTION value={{color.color_id}}>{{color.color_name}}</option>
+            {% endfor %}
+            </SELECT>
+            <input type="submit" class="btn btn-primary" data-toggle="Save" value="Save">
+        </form>
+    </div>
+{% endblock  %}

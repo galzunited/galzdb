@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Add User</h1>
+    <div class="user">
+        <form action="{{ url_for('add_user') }}" method="POST">
+            <label>First Name:</label>
+            <input type=text" name="input_first_name">
+            <label>Last Name:</label>
+            <input type=text" name="input_last_name">
+            <label>Phone Number:</label>
+            <input type=text" name="input_phone_number">
+            <input type="submit" class="btn btn-primary" data-toggle="Save" value="Save">
+        </form>
+    </div>
+{% endblock  %}

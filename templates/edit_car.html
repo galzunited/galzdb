@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Edit Car</h1>
+    <div class="car">
+        <form action="{{ url_for('edit_car', car_plate=car.car_plate)}}" method="POST">
+            <label>Car Plate:</label>
+            <input type=text" name="input_car_plate" value="{{car.car_plate}}">
+            Choose a User<SELECT name="input_user_id">
+            {% for user in users %}
+                <OPTION {% if car.user_id == user.user_id %} selected {% endif %} value={{user.user_id}}>{{user.first_name}} {{user.last_name}}</option>
+            {% endfor %}
+            </SELECT>
+            Choose a Color<SELECT name="input_color_id" >
+            {% for color in carColors %}
+                <OPTION {% if car.color_id == color.color_id %} selected {% endif %} value={{color.color_id}}>{{color.color_name}}</option>
+            {% endfor %}
+            </SELECT>
+            <input type="submit" class="btn btn-primary" data-toggle="Save" value="Save">
+        </form>
+    </div>
+{% endblock  %}
