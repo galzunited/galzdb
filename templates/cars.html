@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    {% for car in carsList  %}
+        <div class="car">
+            <div id="carplate">Carplate: {{car.car_plate}}</div>
+            <div id="userfirstname">First Name: {{car.first_name}}</div>
+            <div id="userlastname">Last Name: {{car.last_name}}</div>
+            <div id="userphonenumber">Phone Number: {{car.phone_number}}</div>
+            <div id="carcolor">Car Color: {{car.color_name}}</div>
+        </div>
+    {% endfor  %}
+{% endblock  %}
